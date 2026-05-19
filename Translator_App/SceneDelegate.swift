@@ -14,15 +14,50 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-                let window = UIWindow(windowScene: windowScene)
-                let splashVC = SplashViewController(nibName: "SplashViewController", bundle: nil)
-                let navController = UINavigationController(rootViewController: splashVC)
-
-                window.rootViewController = navController
-                window.makeKeyAndVisible()
+        let window = UIWindow(windowScene: windowScene)
                 self.window = window
+
+                // Load SplashViewController from .xib
+                window.rootViewController = SplashViewController()
+                window.makeKeyAndVisible()
+
+                // Switch to main screen after 3 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    self.switchToMainScreen()
+                }
     }
 
+    func switchToMainScreen() {
+            let homeVC = MainViewController()
+            let searchVC = HistoryViewController()
+            let profileVC = ProfileViewController()
+
+            let homeNav = UINavigationController(rootViewController: homeVC)
+            let searchNav = UINavigationController(rootViewController: searchVC)
+            let profileNav = UINavigationController(rootViewController: profileVC)
+
+            homeNav.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+            searchNav.tabBarItem = UITabBarItem(title: "History", image: UIImage(systemName: "clock"), tag: 1)
+            profileNav.tabBarItem = UITabBarItem(title: "Setting", image: UIImage(systemName: "gearshape"), tag: 2)
+
+            let tabBarController = UITabBarController()
+            tabBarController.viewControllers = [homeNav, searchNav, profileNav]
+
+            guard let window = self.window else { return }
+
+            UIView.transition(
+                with: window,
+                duration: 0.3,
+                options: .transitionCrossDissolve,
+                animations: {
+                    window.rootViewController = tabBarController
+                },
+                completion: nil
+            )
+        }
+    }
+
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
@@ -52,5 +87,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-}
+
 

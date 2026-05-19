@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="Translator_App" customModuleProvider="target">
             <connections>
+                <outlet property="logoView" destination="Ys4-97-3tG" id="b5H-0C-9Rw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
