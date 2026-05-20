@@ -19,6 +19,9 @@
                 <outlet property="OutputTextView" destination="xUH-b1-2dN" id="jBx-wj-R21"/>
                 <outlet property="card1" destination="bns-uG-PtX" id="FcE-cu-uWl"/>
                 <outlet property="card2" destination="fsw-Ng-ar0" id="zt5-Ra-QaN"/>
+                <outlet property="copyButton" destination="BOF-pl-nrx" id="CSC-rx-hG8"/>
+                <outlet property="swapButton" destination="fsT-Zc-gWg" id="nn3-oh-tXZ"/>
+                <outlet property="translateButton" destination="ilE-SE-EGO" id="kYe-Kp-94X"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,6 +51,9 @@
                             <state key="normal" title="Default ">
                                 <color key="titleColor" systemColor="tintColor"/>
                             </state>
+                            <connections>
+                                <action selector="Language1Tapped:" destination="-1" eventType="touchUpInside" id="sFo-lU-lyi"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsT-Zc-gWg">
                             <rect key="frame" x="118" y="10" width="52" height="29"/>
@@ -57,6 +63,9 @@
                                 <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                 <color key="baseForegroundColor" systemColor="linkColor"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="swapTapped:" destination="-1" eventType="touchUpInside" id="Lbn-xY-uUo"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASt-Sa-8su">
                             <rect key="frame" x="175" y="10" width="105" height="29"/>
@@ -70,6 +79,9 @@
                             <state key="normal" title="Default">
                                 <color key="titleColor" systemColor="tintColor"/>
                             </state>
+                            <connections>
+                                <action selector="Language2Tapped:" destination="-1" eventType="touchUpInside" id="E4c-pB-Dwl"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,13 +96,13 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Your Text Here......." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BdR-5L-4Y8">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Your Text Here......." translatesAutoresizingMaskIntoConstraints="NO" id="BdR-5L-4Y8">
                             <rect key="frame" x="8" y="21.5" width="274" height="110"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="110" id="RLZ-LU-j3j"/>
                             </constraints>
                             <color key="textColor" systemColor="labelColor"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ba0-zc-lke">
@@ -137,12 +149,12 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Output Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xUH-b1-2dN">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Output Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xUH-b1-2dN">
                             <rect key="frame" x="8" y="21.5" width="274" height="110"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="110" id="tMZ-ES-aeP"/>
                             </constraints>
-                            <color key="textColor" systemColor="tintColor"/>
+                            <color key="textColor" systemColor="secondaryLabelColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -163,6 +175,9 @@
                                         <color key="baseForegroundColor" systemColor="linkColor"/>
                                         <color key="baseBackgroundColor" systemColor="systemGray5Color"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="CopyTapped:" destination="-1" eventType="touchUpInside" id="0yW-8b-7B5"/>
+                                    </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hDp-jC-s81">
                                     <rect key="frame" x="135" y="0.0" width="139" height="34"/>
@@ -202,6 +217,9 @@
                     <buttonConfiguration key="configuration" style="filled" title="Translate">
                         <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="translatetapped:" destination="-1" eventType="touchUpInside" id="mZk-70-JZx"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -241,6 +259,9 @@
         </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

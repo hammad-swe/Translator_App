@@ -36,9 +36,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let searchNav = UINavigationController(rootViewController: searchVC)
             let profileNav = UINavigationController(rootViewController: profileVC)
 
-            homeNav.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
-            searchNav.tabBarItem = UITabBarItem(title: "History", image: UIImage(systemName: "clock"), tag: 1)
-            profileNav.tabBarItem = UITabBarItem(title: "Setting", image: UIImage(systemName: "gearshape"), tag: 2)
+            homeNav.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
+            searchNav.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "clock"), tag: 1)
+            profileNav.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "gearshape"), tag: 2)
 
             let tabBarController = UITabBarController()
             tabBarController.viewControllers = [homeNav, searchNav, profileNav]
