@@ -21,10 +21,18 @@ struct MyMemoryTranslation: Decodable , Sendable{
 struct Language: Codable , Sendable{
     let code: String
     let name: String
+    
+    init(code: String, name: String) {
+            self.code = code
+            self.name = name
+        }
 }
 
  struct FirstOrgResponse: Decodable, Sendable {
     let data: [String: String]
 }
 
+ struct CountryLanguages: Decodable {
+    let languages: [String: String]?
+}
 
