@@ -100,17 +100,17 @@ class LanguagePickerViewController: UIViewController {
             isSearching ? filteredLanguages : languages
         }
 
-        private func flag(for code: String) -> String {
-            let flags: [String: String] = [
-                "en": "🇬🇧", "ur": "🇵🇰", "ar": "🇸🇦", "fr": "🇫🇷",
-                "de": "🇩🇪", "es": "🇪🇸", "zh": "🇨🇳", "hi": "🇮🇳",
-                "tr": "🇹🇷", "ru": "🇷🇺", "ja": "🇯🇵", "ko": "🇰🇷",
-                "it": "🇮🇹", "pt": "🇵🇹", "bn": "🇧🇩", "fa": "🇮🇷",
-                "nl": "🇳🇱", "pl": "🇵🇱", "sv": "🇸🇪", "id": "🇮🇩",
-                "ms": "🇲🇾", "th": "🇹🇭", "vi": "🇻🇳", "el": "🇬🇷"
-            ]
-            return flags[code.lowercased()] ?? "🌐"
-        }
+//        private func flag(for code: String) -> String {
+//            let flags: [String: String] = [
+//                "en": "🇬🇧", "ur": "🇵🇰", "ar": "🇸🇦", "fr": "🇫🇷",
+//                "de": "🇩🇪", "es": "🇪🇸", "zh": "🇨🇳", "hi": "🇮🇳",
+//                "tr": "🇹🇷", "ru": "🇷🇺", "ja": "🇯🇵", "ko": "🇰🇷",
+//                "it": "🇮🇹", "pt": "🇵🇹", "bn": "🇧🇩", "fa": "🇮🇷",
+//                "nl": "🇳🇱", "pl": "🇵🇱", "sv": "🇸🇪", "id": "🇮🇩",
+//                "ms": "🇲🇾", "th": "🇹🇭", "vi": "🇻🇳", "el": "🇬🇷"
+//            ]
+//            return flags[code.lowercased()] ?? "🌐"
+//        }
 }
 
 // MARK: - UITableViewDataSource

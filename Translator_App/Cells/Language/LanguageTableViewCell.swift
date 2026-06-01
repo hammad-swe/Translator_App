@@ -46,29 +46,49 @@ final class LanguageTableViewCell: UITableViewCell {
             : .secondarySystemGroupedBackground
     }
 
+    
+//    
+//    func configure(with language: Language, isSelected: Bool) {
+//        namelabel.text = language.name
+//        
+//        // ✅ Replace old emoji(for:) with LanguageInfo lookup
+//        flaglabel.text = LanguageInfo.all
+//            .first { $0.code == language.code }?
+//            .flagEmoji ?? "🌐"
+//        
+//        selectedIndicator.isHidden = !isSelected
+//        backgroundColor = isSelected
+//            ? UIColor.systemBlue.withAlphaComponent(0.08)
+//            : .secondarySystemGroupedBackground
+//    }
     // MARK: - Emoji flag
     private func emoji(for code: String) -> String {
-        let map: [String: String] = [
-            "af": "🇿🇦", "sq": "🇦🇱", "am": "🇪🇹", "ar": "🇸🇦", "hy": "🇦🇲",
-            "az": "🇦🇿", "be": "🇧🇾", "bn": "🇧🇩", "bs": "🇧🇦", "bg": "🇧🇬",
-            "ca": "🇪🇸", "zh": "🇨🇳", "hr": "🇭🇷", "cs": "🇨🇿", "da": "🇩🇰",
-            "nl": "🇳🇱", "en": "🇬🇧", "et": "🇪🇪", "fi": "🇫🇮", "fr": "🇫🇷",
-            "gl": "🇪🇸", "ka": "🇬🇪", "de": "🇩🇪", "el": "🇬🇷", "gu": "🇮🇳",
-            "ht": "🇭🇹", "ha": "🇳🇬", "he": "🇮🇱", "hi": "🇮🇳", "hu": "🇭🇺",
-            "is": "🇮🇸", "ig": "🇳🇬", "id": "🇮🇩", "ga": "🇮🇪", "it": "🇮🇹",
-            "ja": "🇯🇵", "kn": "🇮🇳", "kk": "🇰🇿", "km": "🇰🇭", "ko": "🇰🇷",
-            "ku": "🇮🇶", "ky": "🇰🇬", "lo": "🇱🇦", "lv": "🇱🇻", "lt": "🇱🇹",
-            "lb": "🇱🇺", "mk": "🇲🇰", "mg": "🇲🇬", "ms": "🇲🇾", "ml": "🇮🇳",
-            "mt": "🇲🇹", "mi": "🇳🇿", "mr": "🇮🇳", "mn": "🇲🇳", "my": "🇲🇲",
-            "ne": "🇳🇵", "nb": "🇳🇴", "nn": "🇳🇴", "ps": "🇦🇫", "fa": "🇮🇷",
-            "pl": "🇵🇱", "pt": "🇵🇹", "pa": "🇮🇳", "ro": "🇷🇴", "ru": "🇷🇺",
-            "sm": "🇼🇸", "sr": "🇷🇸", "sn": "🇿🇼", "sd": "🇵🇰", "si": "🇱🇰",
-            "sk": "🇸🇰", "sl": "🇸🇮", "so": "🇸🇴", "es": "🇪🇸", "sw": "🇹🇿",
-            "sv": "🇸🇪", "tl": "🇵🇭", "tg": "🇹🇯", "ta": "🇮🇳", "tt": "🇷🇺",
-            "te": "🇮🇳", "th": "🇹🇭", "tr": "🇹🇷", "tk": "🇹🇲", "uk": "🇺🇦",
-            "ur": "🇵🇰", "uz": "🇺🇿", "vi": "🇻🇳", "cy": "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "xh": "🇿🇦",
-            "yi": "🇮🇱", "yo": "🇳🇬", "zu": "🇿🇦"
-        ]
-        return map[code.lowercased()] ?? "🌐"
+        
+        
+        LanguageInfo.all
+                .first { $0.code == code }?
+                .flagEmoji ?? "🌐"
+//        let map: [String: String] = [
+//            "af": "🇿🇦", "sq": "🇦🇱", "am": "🇪🇹", "ar": "🇸🇦", "hy": "🇦🇲",
+//            "az": "🇦🇿", "be": "🇧🇾", "bn": "🇧🇩", "bs": "🇧🇦", "bg": "🇧🇬",
+//            "ca": "🇪🇸", "zh": "🇨🇳", "hr": "🇭🇷", "cs": "🇨🇿", "da": "🇩🇰",
+//            "nl": "🇳🇱", "en": "🇬🇧", "et": "🇪🇪", "fi": "🇫🇮", "fr": "🇫🇷",
+//            "gl": "🇪🇸", "ka": "🇬🇪", "de": "🇩🇪", "el": "🇬🇷", "gu": "🇮🇳",
+//            "ht": "🇭🇹", "ha": "🇳🇬", "he": "🇮🇱", "hi": "🇮🇳", "hu": "🇭🇺",
+//            "is": "🇮🇸", "ig": "🇳🇬", "id": "🇮🇩", "ga": "🇮🇪", "it": "🇮🇹",
+//            "ja": "🇯🇵", "kn": "🇮🇳", "kk": "🇰🇿", "km": "🇰🇭", "ko": "🇰🇷",
+//            "ku": "🇮🇶", "ky": "🇰🇬", "lo": "🇱🇦", "lv": "🇱🇻", "lt": "🇱🇹",
+//            "lb": "🇱🇺", "mk": "🇲🇰", "mg": "🇲🇬", "ms": "🇲🇾", "ml": "🇮🇳",
+//            "mt": "🇲🇹", "mi": "🇳🇿", "mr": "🇮🇳", "mn": "🇲🇳", "my": "🇲🇲",
+//            "ne": "🇳🇵", "nb": "🇳🇴", "nn": "🇳🇴", "ps": "🇦🇫", "fa": "🇮🇷",
+//            "pl": "🇵🇱", "pt": "🇵🇹", "pa": "🇮🇳", "ro": "🇷🇴", "ru": "🇷🇺",
+//            "sm": "🇼🇸", "sr": "🇷🇸", "sn": "🇿🇼", "sd": "🇵🇰", "si": "🇱🇰",
+//            "sk": "🇸🇰", "sl": "🇸🇮", "so": "🇸🇴", "es": "🇪🇸", "sw": "🇹🇿",
+//            "sv": "🇸🇪", "tl": "🇵🇭", "tg": "🇹🇯", "ta": "🇮🇳", "tt": "🇷🇺",
+//            "te": "🇮🇳", "th": "🇹🇭", "tr": "🇹🇷", "tk": "🇹🇲", "uk": "🇺🇦",
+//            "ur": "🇵🇰", "uz": "🇺🇿", "vi": "🇻🇳", "cy": "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "xh": "🇿🇦",
+//            "yi": "🇮🇱", "yo": "🇳🇬", "zu": "🇿🇦"
+//        ]
+//        return map[code.lowercased()] ?? "🌐"
     }
 }
